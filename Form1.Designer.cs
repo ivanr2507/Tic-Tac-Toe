@@ -37,6 +37,12 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
+            this.xLabel = new System.Windows.Forms.Label();
+            this.xPointLabel = new System.Windows.Forms.Label();
+            this.oLabel = new System.Windows.Forms.Label();
+            this.oPointLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.turnValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // A1
@@ -166,12 +172,91 @@
             this.C3.UseVisualStyleBackColor = false;
             this.C3.Click += new System.EventHandler(this.ButtonClicked);
             // 
+            // xLabel
+            // 
+            this.xLabel.AutoSize = true;
+            this.xLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.xLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.xLabel.Location = new System.Drawing.Point(12, 261);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(90, 24);
+            this.xLabel.TabIndex = 1;
+            this.xLabel.Text = "X Points: ";
+            // 
+            // xPointLabel
+            // 
+            this.xPointLabel.AutoSize = true;
+            this.xPointLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.xPointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xPointLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.xPointLabel.Location = new System.Drawing.Point(89, 262);
+            this.xPointLabel.Name = "xPointLabel";
+            this.xPointLabel.Size = new System.Drawing.Size(20, 24);
+            this.xPointLabel.TabIndex = 1;
+            this.xPointLabel.Text = "0";
+            // 
+            // oLabel
+            // 
+            this.oLabel.AutoSize = true;
+            this.oLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.oLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.oLabel.Location = new System.Drawing.Point(159, 261);
+            this.oLabel.Name = "oLabel";
+            this.oLabel.Size = new System.Drawing.Size(91, 24);
+            this.oLabel.TabIndex = 1;
+            this.oLabel.Text = "O Points: ";
+            // 
+            // oPointLabel
+            // 
+            this.oPointLabel.AutoSize = true;
+            this.oPointLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.oPointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oPointLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.oPointLabel.Location = new System.Drawing.Point(236, 262);
+            this.oPointLabel.Name = "oPointLabel";
+            this.oPointLabel.Size = new System.Drawing.Size(20, 24);
+            this.oPointLabel.TabIndex = 1;
+            this.oPointLabel.Text = "0";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(93, 289);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "New";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // turnValue
+            // 
+            this.turnValue.AutoSize = true;
+            this.turnValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.turnValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnValue.ForeColor = System.Drawing.SystemColors.Info;
+            this.turnValue.Location = new System.Drawing.Point(13, 291);
+            this.turnValue.Name = "turnValue";
+            this.turnValue.Size = new System.Drawing.Size(56, 18);
+            this.turnValue.TabIndex = 1;
+            this.turnValue.Text = "Turn: X";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(262, 260);
+            this.ClientSize = new System.Drawing.Size(262, 318);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.oPointLabel);
+            this.Controls.Add(this.xPointLabel);
+            this.Controls.Add(this.oLabel);
+            this.Controls.Add(this.turnValue);
+            this.Controls.Add(this.xLabel);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.B3);
             this.Controls.Add(this.A3);
@@ -181,6 +266,7 @@
             this.Controls.Add(this.C1);
             this.Controls.Add(this.B1);
             this.Controls.Add(this.A1);
+            this.ForeColor = System.Drawing.SystemColors.Info;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.KeyPreview = true;
@@ -191,6 +277,7 @@
             this.Text = "Tic-Tac-Toe";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormKeyPressed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,6 +292,12 @@
         private System.Windows.Forms.Button C1;
         private System.Windows.Forms.Button C2;
         private System.Windows.Forms.Button C3;
+        private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.Label xPointLabel;
+        private System.Windows.Forms.Label oLabel;
+        private System.Windows.Forms.Label oPointLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label turnValue;
     }
 }
 

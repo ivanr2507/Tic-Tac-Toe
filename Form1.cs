@@ -14,17 +14,32 @@ namespace TicTacToe
     {
         public static bool turn = false;
         public static int turnNum;
+        public static int xWins;
+        public static int oWins;
         public Form1()
         {
             InitializeComponent();
         }
         private void ButtonClicked(object sender, EventArgs e)
         {
-            turn = !turn;
+            
             Button btn = sender as Button;
 
             if (btn.Text == "")
+            {
                 turnNum++;
+                turn = !turn;
+                string turnStr = "X";
+                if (turn == true)
+                {
+                    turnStr = "O";
+                }
+                if (turn == false)
+                {
+                    turnStr = "X";
+                }
+                turnValue.Text = ("Turn: " + turnStr);
+            }
             if (turn && btn.Text == "")
             {
                 btn.Text = "X";
@@ -44,6 +59,8 @@ namespace TicTacToe
                 || C1.Text == "X" && C2.Text == "X" && C3.Text == "X")
             {
                 MessageBox.Show("X WINS", "WOOHOO");
+                xWins++;
+                xPointLabel.Text = xWins.ToString();
                 NewGame(this);
             }
             ///HORIZONTAL CHECK FOR O
@@ -51,6 +68,8 @@ namespace TicTacToe
                 || B1.Text == "O" && B2.Text == "O" && B3.Text == "O"
                 || C1.Text == "O" && C2.Text == "O" && C3.Text == "O")
             {
+                oWins++;
+                oPointLabel.Text = oWins.ToString();
                 MessageBox.Show("O WINS", "WOOHOO");
                 NewGame(this);
             }
@@ -60,6 +79,8 @@ namespace TicTacToe
                 || A2.Text == "X" && B2.Text == "X" && C2.Text == "X"
                 || A3.Text == "X" && B3.Text == "X" && C3.Text == "X")
             {
+                xWins++;
+                xPointLabel.Text = xWins.ToString();
                 MessageBox.Show("X WINS", "WOOHOO");
                 NewGame(this);
             }
@@ -68,6 +89,8 @@ namespace TicTacToe
                 || A2.Text == "O" && B2.Text == "O" && C2.Text == "O"
                 || A3.Text == "O" && B3.Text == "O" && C3.Text == "O")
             {
+                oWins++;
+                oPointLabel.Text = oWins.ToString();
                 MessageBox.Show("O WINS", "WOOHOO");
                 NewGame(this);
             }
@@ -76,6 +99,8 @@ namespace TicTacToe
             if (A1.Text == "X" && B2.Text == "X" && C3.Text == "X"
                 || A3.Text == "X" && B2.Text == "X" && C1.Text == "X")
             {
+                xWins++;
+                xPointLabel.Text = xWins.ToString();
                 MessageBox.Show("X WINS", "WOOHOO");
                 NewGame(this);
             }
@@ -83,6 +108,8 @@ namespace TicTacToe
             if (A1.Text == "O" && B2.Text == "O" && C3.Text == "O"
                 || A3.Text == "O" && B2.Text == "O" && C1.Text == "O")
             {
+                oWins++;
+                oPointLabel.Text = oWins.ToString();
                 MessageBox.Show("O WINS", "WOOHOO");
                 NewGame(this);
             }
@@ -99,7 +126,10 @@ namespace TicTacToe
             turnNum = 0;
             foreach(Control control in form.Controls)
             {
-                control.Text = "";
+                if (control is Button && control.Text == "X" || control.Text == "O")
+                {
+                    control.Text = "";
+                }
             }
         }
 
@@ -109,6 +139,11 @@ namespace TicTacToe
             {
                 NewGame(this);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewGame(this);
         }
     }
 }
