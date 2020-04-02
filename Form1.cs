@@ -21,8 +21,10 @@ namespace TicTacToe
         private void ButtonClicked(object sender, EventArgs e)
         {
             turn = !turn;
-            turnNum++;
             Button btn = sender as Button;
+
+            if (btn.Text == "")
+                turnNum++;
             if (turn && btn.Text == "")
             {
                 btn.Text = "X";

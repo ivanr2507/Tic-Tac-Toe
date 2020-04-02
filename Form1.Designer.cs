@@ -187,6 +187,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tic-Tac-Toe";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormKeyPressed);
             this.ResumeLayout(false);
