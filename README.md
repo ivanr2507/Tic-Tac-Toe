@@ -1,2 +1,6 @@
 # TicTacToe
- simple tictactoe game in C#
+Simple Tic-Tac-Toe game in C#
+
+Has a turn counter and keeps points.
+
+<img src="https://i.imgur.com/fDAKeeN.png">
