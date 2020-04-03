@@ -43,6 +43,7 @@
             this.oPointLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.turnValue = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // A1
@@ -229,7 +230,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "New";
+            this.button1.Text = "[N]ew";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -245,12 +246,26 @@
             this.turnValue.TabIndex = 1;
             this.turnValue.Text = "Turn: X";
             // 
+            // resetButton
+            // 
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.resetButton.Location = new System.Drawing.Point(175, 289);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 2;
+            this.resetButton.Text = "[R]eset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(262, 318);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.oPointLabel);
             this.Controls.Add(this.xPointLabel);
@@ -298,6 +313,7 @@
         private System.Windows.Forms.Label oPointLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label turnValue;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 
